@@ -1,0 +1,30 @@
+[
+  {
+    "id": 4,
+    "sku": "597-cig-301",
+    "title_lang1": "Oil - Truffle, White",
+    "group_id": "",
+    "group": "group_01"
+  },
+  {
+    "id": 8,
+    "sku": "390-qfh-429",
+    "title_lang1": "Bread - Roll, Italian",
+    "group_id": "",
+    "group": "group_01"
+  },
+  {
+    "id": 10,
+    "sku": "890-zbp-256",
+    "title_lang1": "Table Cloth 72x144 White",
+    "group_id": "",
+    "group": "group_02"
+  },
+  {
+    "id": 18,
+    "sku": "653-mog-533",
+    "title_lang1": "Sparkling Wine - Rose, Freixenet",
+    "group_id": "",
+    "group": "group_02"
+  }
+]

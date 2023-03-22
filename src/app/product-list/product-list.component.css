@@ -1,0 +1,529 @@
+
+.scrollable-content {
+    max-height: 350px;
+    overflow-y: auto;
+}
+.box-wrap-content {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 15px;
+    background: #eff1f7;
+    margin-top: -2px;
+}
+
+.box-content {
+    padding: 15px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.paging {
+    padding: 10px 0;
+}
+
+
+
+
+/* addnewcss */
+
+body {
+    position: relative;
+    width: 1440px;
+    height: 1000px;
+    background: #EFF1F7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: arial;
+}
+
+.wrapper {
+    position: relative;
+}
+
+/* tab ข้าง */
+.sidebar {
+    position: fixed;
+    background: #1A1A1A;
+    padding: 20px 0;
+    width: 240px;
+    height: 900px;
+}
+
+.text-muted {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.sidebar ul li {
+    padding: 15px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    display: block;
+}
+
+.sidebar ul li a .fas {
+    width: 30px;
+    color: #bdb8d7 !important;
+}
+
+.sidebar ul li a .far {
+    width: 30px;
+    color: #bdb8d7 !important;
+}
+
+.sidebar ul li:hover {
+    background: #000;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: none;
+}
+
+/* navbar ด้านบน */
+.topbar {
+    width: 1200px;
+    height: 64px;
+    left: 240px;
+    top: 0px;
+    position: fixed;
+    background: #FFFFFF;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.boxcontent {
+    margin-top: 100px;
+    width: 1127px;
+    height: 778px;
+    margin-left: 280px;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+
+/* boxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+.box1 {
+    width: 1103px;
+    height: 28px;
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px #E8E8E8;
+    margin-left: 1%;
+}
+
+
+.box2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 1103px;
+    height: 49px;
+    background: #FFFFFF;
+    margin-left: 1%;
+}
+
+.row2box1 {
+    padding: 4px 0px;
+    margin-left: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.row2box2 {
+    margin-left: 290px;
+    margin-top: 6px;
+    width: 113px;
+    height: 38px;
+    background: #21A465;
+    border: 1px solid #21A465;
+    border-radius: 4px;
+}
+
+.row2box3 {
+    margin-top: 6px;
+    width: 106px;
+    height: 38px;
+    margin-left: 20px;
+    padding: 0px 11px;
+
+}
+
+.row2box4 {
+    margin-top: 6px;
+    padding: 0px 10px;
+    width: 160px;
+    height: 38px;
+    margin-left: 20px;
+    padding: 0px 11px;
+}
+
+.row2box5 {
+    margin-top: 6px;
+    padding: 0px 10px;
+    width: 175px;
+    height: 38px;
+    margin-left: 20px;
+    padding: 0px 11px;
+}
+
+.row2box6 {
+    margin-top: 6px;
+    padding: 0px 10px;
+    width: 80px;
+    height: 38px;
+    margin-left: 20px;
+    background: #F05043;
+    border-radius: 4px;
+}
+
+
+.box3 {
+    width: 1200px;
+    height: 63px;
+    background: #F4F8FF;
+    margin-bottom: 10px;
+}
+
+.rowbox1 {
+    margin-top: 20px;
+    margin-left: 92px;
+    width: 200px;
+    height: 30px;
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.65);
+
+}
+
+.rowbox2 {
+    margin-top: 10px;
+    padding: 0px 10px;
+    margin-left: -40px;
+    width: 60px;
+    height: 30px;
+}
+
+.rowbox3 {
+    margin-top: 10px;
+    padding: 0px 10px;
+    margin-left: 8px;
+    width: 100px;
+    height: 30px;
+
+}
+
+.rowbox4 {
+    margin-top: 10;
+    padding: 0px 10px;
+    margin-left: 5px;
+    width: 165px;
+    height: 30px;
+
+}
+
+.rowbox5 {
+    margin-top: 10px;
+    padding: 0px 10px;
+    margin-left: 5px;
+    width: 126px;
+    height: 30px;
+
+}
+
+.rowbox6 {
+    margin-top: 10px;
+    padding: 0px 10px;
+    margin-left: 5px;
+    width: 160px;
+    height: 30px;
+
+
+}
+
+.rowbox7 {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 5px 0px;
+    height: 30px;
+
+
+}
+
+.rowbox8 {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 30px;
+    padding: 2px 0px;
+    width: 200px;
+}
+
+.rowbox9 {
+    margin-top: 10px;
+    margin-left: -45px;
+    padding: 2px 6px;
+    width: 30px;
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+}
+
+.rowbox10 {
+    margin-top: 10px;
+    margin-left: 4px;
+    width: 30px;
+    padding: 2px 6px;
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+
+}
+
+
+.boxtable {
+    width: 1103px;
+    height: 50px;
+    margin-top: 1%;
+    margin-left: 0.5%;
+}
+
+.toptable {
+    width: 1103px;
+    height: 45px;
+    background: #FAFAFA;
+    border-bottom: 1px solid #E8E8E8;
+
+}
+
+/* text */
+.textrowbox2 {
+    font-family: 'Prompt';
+    font-size: 14px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.textinselect1 {
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.textaddproduct {
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.textsearchbox {
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.textheadtable {
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.textproduct {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.textsku {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+
+
+/* modalbox เลือกสินค้า */
+.boxmodal {
+    margin-left: 100px;
+    margin-top: 320px;
+    width: 417px;
+    height: 305px;
+    left: 512px;
+    background: #F4F4F4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.boxmodal-header {
+    width: 417px;
+    height: 80px;
+}
+
+.textmodal-header {
+    padding-top: 30px;
+    width: 417px;
+    height: 80px;
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: #000000;
+}
+
+.boxmodal-body {
+    width: 417px;
+    height: 180px;
+}
+
+.boxbody {
+    padding: 15px 25px;
+    width: 417px;
+    height: 180px;
+    background: #F4F4F4;
+}
+
+.boxcontentbody1 {
+    width: 161px;
+    height: 137px;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+    float: left;
+}
+
+.boxcontentbody2 {
+    width: 161px;
+    height: 137px;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+    float: right;
+}
+
+
+
+.boxmodal-footer {
+    width: 417px;
+    height: 43.2px;
+    left: 512px;
+    background: #F4F4F4;
+    padding-left: 240px;
+    padding-right: 24px;
+
+}
+
+.buttonfooter1 {
+    border-radius: 4px;
+    width: 68px;
+    height: 32px;
+    float: left;
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.65);
+
+
+}
+
+.buttonfooter2 {
+
+    width: 68px;
+    height: 32px;
+    background: #E53625;
+    border: 1px solid #E53625;
+    border-radius: 4px;
+    float: right;
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+
+}
+
+.text1property {
+    padding-top: 2px;
+    margin-left: 53px;
+    margin-bottom: 17px;
+    width: 60px;
+    height: 19px;
+    background: #FFF2E8;
+    border: 1px solid #FFBB96;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: #FA541C;
+}
+
+.text2property {
+    margin-left: 24px;
+    width: 110px;
+    height: 21px;
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #000000;
+}
+
+.text3property {
+    margin-bottom: 10px;
+    width: 156px;
+    height: 21px;
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.text4property {
+    margin-left: 28px;
+    padding-top: 2px;
+    width: 104px;
+    height: 20px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+

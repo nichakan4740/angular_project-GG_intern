@@ -1,0 +1,147 @@
+<div class="row mx-0 layout-system-tmt overflow-hidden ng-star-inserted" style="height: 100vh;">
+  <div class="col px-0">
+    <nz-layout style="width: 100vw; height: 100vh;">
+      <nz-header class="p-0" style="z-index: 99;">
+        <div class="row mx-0">
+          <div class="col px-0 text-center" style="max-width: 240px; background: #1a1a1a;">
+            <img src="" alt="Theme-Logo" class="img-fluid" src="../assets/images/logoket_shop.svg"
+              style="width: 180px;">
+            <br>
+          </div>
+          <div class="col px-0 bg-white shadow">
+            <div class="row mx-0 justify-content-between">
+              <div class="col-auto px-0 align-self-center">
+                <div class="row mx-0">
+                  <div class="col-auto pr-0 cs-pointer align-self-center">
+                    <i class="anticon vertical-align-unset font-tmt-16 px-2 hv-text-tmt-cl anticon-menu-fold" nz-icon
+                      nz-tooltip nzplacement="bottom" (click)="isCollapsed = !isCollapsed">
+                      <svg data-icon="menu-fold" aria-hidden="true">
+                        <path
+                          d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 000 13.8z">
+                        </path>
+                      </svg>
+                    </i>
+                  </div>
+                  <div class="col-auto px-0 cs-pointer align-self-center">
+                    <i class="anticon vertical-align-unset font-tmt-16 px-2 hv-text-tmt-cl anticon-fullscreen" nz-icon
+                      nz-tooltip nzplacement="bottom" nztheme="outline">
+                      <svg data-icon="fullscreen" aria-hidden="true">
+                        <path
+                          d="M290 236.4l43.9-43.9a8.01 8.01 0 00-4.7-13.6L169 160c-5.1-.6-9.5 3.7-8.9 8.9L179 329.1c.8 6.6 8.9 9.4 13.6 4.7l43.7-43.7L370 423.7c3.1 3.1 8.2 3.1 11.3 0l42.4-42.3c3.1-3.1 3.1-8.2 0-11.3L290 236.4zm352.7 187.3c3.1 3.1 8.2 3.1 11.3 0l133.7-133.6 43.7 43.7a8.01 8.01 0 0013.6-4.7L863.9 169c.6-5.1-3.7-9.5-8.9-8.9L694.8 179c-6.6.8-9.4 8.9-4.7 13.6l43.9 43.9L600.3 370a8.03 8.03 0 000 11.3l42.4 42.4zM845 694.9c-.8-6.6-8.9-9.4-13.6-4.7l-43.7 43.7L654 600.3a8.03 8.03 0 00-11.3 0l-42.4 42.3a8.03 8.03 0 000 11.3L734 787.6l-43.9 43.9a8.01 8.01 0 004.7 13.6L855 864c5.1.6 9.5-3.7 8.9-8.9L845 694.9zm-463.7-94.6a8.03 8.03 0 00-11.3 0L236.3 733.9l-43.7-43.7a8.01 8.01 0 00-13.6 4.7L160.1 855c-.6 5.1 3.7 9.5 8.9 8.9L329.2 845c6.6-.8 9.4-8.9 4.7-13.6L290 787.6 423.7 654c3.1-3.1 3.1-8.2 0-11.3l-42.4-42.4z">
+                        </path>
+                      </svg>
+                    </i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto align-self-center pl-0">
+                <nz-dropdown nz-dropdown class="ng-tns-c6-5 ng-star-inserted">
+                  <button class="mx-1 btn-tmt-default ant-btn ant-dropdown-trigger ant-btn-default" nz-button
+                    nz-dropdown>
+                    <span nz-icon nzType="translation" nzTheme="outline"></span>
+                  </button>
+                </nz-dropdown>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nz-header>
+      <nz-layout class="ant-layout">
+        <nz-sider
+          style="height: calc(100vh - 64px); background: rgb(26, 26, 26); flex: 0 0 240px; max-width: 240px; min-width: 240px; width: 240px;">
+          <div>
+            <div class="row mx-0">
+              <div class="col-12 px-0 text-center my-3">
+                <nz-radio-group nzsize="small" class="ant-radio-group-small ng-untouched ng-pristine ng-valid">
+                  <label class="ant-radio-button-wrapper ant-radio-button-wrapper-checked">
+                    <span class="ant-radio-button ant-radio-button-checked">
+                      <input class="ant-radio-button-input" type="radio">
+                      <span class="ant-radio-button-inner"></span>
+                    </span>
+                    <span>จัดการ</span>
+                  </label>
+                  <label class="ant-radio-button-wrapper">
+                    <span class="ant-radio-button">
+                      <input class="ant-radio-button-input" type="radio">
+                      <span class="ant-radio-button-inner"></span>
+                    </span>
+                    <span>ปรับแต่ง</span>
+                  </label>
+                </nz-radio-group>
+              </div>
+            </div>
+            <div class="scroll-tmt-nav" id="nav-system-tmt">
+              <ul class="transition-fadein ant-menu ant-menu-root ant-menu-dark ant-menu-inline ng-star-inserted"
+                nz-menu nztheme="dark">
+                <li nz-menu-item routerlink="overview" routerlinkactive="ant-menu-item-selected" tabindex="0"
+                  class="ant-menu-item" data-submenu="unsubmenu" style="padding-left: 24px;">
+                  <div class="row mx-0">
+                    <div class="col px-0 max-w-28">
+                      <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="col px-0">
+                      <span>Overview</span>
+                    </div>
+                  </div>
+                </li>
+                <!-- test -->
+                <li nz-menu-item routerlink="overview" routerlinkactive="ant-menu-item-selected" tabindex="0"
+                  class="ant-menu-item" data-submenu="unsubmenu" style="padding-left: 24px;">
+                  <div class="row mx-0">
+                    <div class="col px-0 max-w-28">
+                      <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="col px-0">
+                      <span>Products</span>
+                    </div>
+                  </div>
+                </li>
+                <!--  -->
+              </ul>
+            </div>
+            <div class="row mx-0">
+              <div class="col text-center pt-2">
+                <span class="txt-white-45 font-tmt-12">เวอร์ชัน 8.6.0 build 320</span>
+              </div>
+            </div>
+          </div>
+        </nz-sider>
+        <!-- <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+          [nzTrigger]="null">
+          <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+            <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+              <ul>
+                <li nz-menu-item nzMatchRouter>
+                  <a routerLink="/product-list">Products</a>
+                </li>
+                <li nz-menu-item nzMatchRouter>
+                  <a>Monitor</a>
+                </li>
+                <li nz-menu-item nzMatchRouter>
+                  <a>Workplace</a>
+                </li>
+              </ul>
+            </li>
+            <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+              <ul>
+                <li nz-menu-item nzMatchRouter>
+                  <a>Basic Form</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nz-sider> -->
+        <nz-content id="bodyContentBox" class="ant-layout-content" style="overflow: auto;">
+          <router-outlet></router-outlet>
+        </nz-content>
+      </nz-layout>
+    </nz-layout>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="inner-content">
+  <router-outlet></router-outlet>
+</div> -->

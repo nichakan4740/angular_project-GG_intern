@@ -1,0 +1,423 @@
+<div [ngSwitch]="selectedOption">
+  <!-- List of product , Selects -->
+  <ng-container *ngSwitchDefault>
+    <div nz-row>
+      <div>
+        <div class="autolayout1">
+          <h1>การเพิ่มคุณสมบัติสินค้า</h1>
+        </div>
+        <div class="autolayout2">
+          <ul style="list-style-type: none">
+            <li class="numberCircle1">1</li>
+            <li style="
+              margin-right: 20px;
+              font-family: 'Prompt';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 21px;
+              color: #000000;
+            ">
+              การจัดกลุ่มสินค้า
+            </li>
+            <li id="line"></li>
+            <li class="numberCircle2">2</li>
+            <li style="
+              font-family: 'Prompt';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 21px;
+              color: #d9d9d9;
+            ">
+              การจัดการคุณสมบัติสินค้า
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div nz-col nzSpan="12" class="container">
+        <nz-table #table [nzData]="products" [nzFrontPagination]="false" [nzShowPagination]="false">
+          <thead>
+            <tr>
+              <!-- <th><label nz-checkbox [(ngModel)]="checked"></label></th> -->
+              <th>ชื่อสินค้า</th>
+              <th>
+                <form (submit)="search(myNameInputText.value)">
+                  <nz-input-group [nzSuffix]="suffixIconSearch">
+                    <!-- <input #inputSearch type="text" [(ngModel)]="searchText" nz-input
+                                          placeholder="ค้นหาชื่อสินค้า หรือ sku"
+                                          (click)="search(inputSearch.value)" /> -->
+
+                    <input type="text" nz-input #myNameInputText placeholder="ค้นหาชื่อสินค้า หรือ sku">
+                    <!-- <button (click)="search(myNameInputText.value)">ค้นหา</button> -->
+                  </nz-input-group>
+                  <ng-template #suffixIconSearch>
+                    <span nz-icon nzType="search"></span>
+                  </ng-template>
+                </form>
+              </th>
+              <th>
+                <button nz-button nzType="text" (click)="toggleSelectAll()">All</button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products">
+              <!-- <td>
+                              <nz-checkbox-wrapper>
+                                  <div nz-col nzSpan="8">
+                                      <label nz-checkbox nzValue="A" [ngModel]="checked"></label>
+                                  </div>
+                              </nz-checkbox-wrapper>
+                          </td> -->
+              <td>
+                <b>{{product.title_lang1}} </b><br>
+                {{product.sku}}
+              </td>
+              <td></td>
+              <td>
+                <button nz-button nzType="default" [disabled]="product.disable" (click)="selected(product)">+</button>
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
+        <div>
+          <br>
+          <ng-template #drawerFooter>
+            <nz-pagination [nzPageIndex]="pageIndex" [nzTotal]="total" [nzPageSize]="pageSize"
+              (nzPageIndexChange)="productPages()" (nzPageIndexChange)="onPageIndexChange($event)"
+              (nzPageSizeChange)="onPageSizeChange($event)">
+            </nz-pagination>
+          </ng-template>
+        </div>
+      </div>
+
+
+      <div nz-col nzSpan="12" class="container">
+        <nz-table class="table-selects" #select [nzData]="products" [nzShowPagination]="false"
+          [nzScroll]="{ y: '300px' }">
+          <thead>
+            <tr>
+              <th>ชื่อสินค้า</th>
+              <th>
+                <input type="text" nz-input placeholder="ตั้งชื่อกลุ่ม" [(ngModel)]="nameGroup">
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let select of selects;let index = index">
+              <td>
+                <b> {{select.title_lang1}} </b><br>
+                {{select.sku}}
+              </td>
+              <td>
+                <button style="float: right;" nz-button nzType="default" [disabled]="!select.disable"
+                  (click)="remove(index)">-</button>
+                <!-- <button nzType="primary" nzShape="round" nzDanger (click)="remove(index)"
+                                  [disabled]="disableDeleteButton">
+                                  Delete
+                              </button> -->
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
+        <div class="button-create">
+          <button nz-button nzType="default" type="button" (click)="createGroup()">สร้างกลุ่ม</button>
+        </div>
+      </div>
+      <div class="buttom-next">
+        <button nz-button nzType="default" (click)="selectedOption='template1'"
+          [ngClass]="{'active': selectedOption === 'ngSwitchDefault'}">หน้าถัดไป</button>
+      </div>
+      <!-- <div class="button-back">
+        <button nz-button nzType="default" (click)="selectedOption=['ngSwitchDefault']"
+          [ngClass]="{'active': selectedOption === 'template1'}">กลับ</button>
+      </div> -->
+    </div>
+  </ng-container>
+
+
+
+  <!-- หน้า Groups -->
+  <ng-container *ngSwitchCase="'template1'">
+    <div nz-row class="container">
+      <div nz-col nzSpan="14" class="container">
+        <nz-table>
+          <thead>
+            <tr>
+              <th>ชื่อกลุ่ม</th>
+              <th>
+                <form (submit)="search(searchInputText.value)">
+                  <nz-input-group [nzSuffix]="suffixIconSearch">
+                    <!-- <input #inputSearch type="text" [(ngModel)]="searchText" nz-input
+                                          placeholder="ค้นหาชื่อกลุ่ม" (submit)="search(inputSearch.value)" /> -->
+                    <input type="text" nz-input #searchInputText placeholder="ค้นหาชื่อกลุ่ม">
+                  </nz-input-group>
+                  <ng-template #suffixIconSearch>
+                    <span nz-icon nzType="search"></span>
+                  </ng-template>
+                </form>
+              </th>
+            </tr>
+          </thead>
+        </nz-table>
+        <br>
+        <div class="scrollable-content">
+          <nz-collapse *ngIf="groups.length > 0" nzExpandIconPosition="right" [nzBordered]="false">
+            <nz-collapse-panel *ngFor="let group of groups" [nzHeader]="group.group">
+              <nz-table [nzData]="products" [nzShowPagination]="false">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox" [(ngModel)]="checkboxAll" (change)="checkAll()">
+                    </th>
+                    <th>ชื่อสินค้า</th>
+                    <th>
+                      {{mainProp}}-{{subProp}}
+                    </th>
+                    <th>
+                      default
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let member of group.member; let i=index;">
+                    <td>
+                      <!-- <input type="checkbox" [(ngModel)]="member.checked"
+                                              (ngModelChange)="onCheckbox()" name="{{member.checked}}"> -->
+                      <input type="checkbox" [(ngModel)]="member.check" (change)="checkSingle()">
+                    </td>
+                    <td>
+                      <b>{{member.title_lang1}}</b><br>{{member.sku}}
+                    </td>
+                    <td>
+                      {{member.propValueMain}}-{{member.propValueSub}}
+                    </td>
+                    <td>
+                      <nz-switch nzSize="small" [(ngModel)]="member.default" (change)="onSwitch(member.id)"></nz-switch>
+                      <!-- <button type="button" (click)="onSwitch(member.id)">Switch</button> -->
+                    </td>
+                  </tr>
+                </tbody>
+              </nz-table>
+            </nz-collapse-panel>
+          </nz-collapse>
+        </div>
+      </div>
+
+
+      <div nz-col nzSpan="10" class="container">
+        <div>
+          <div nz-row [nzGutter]="12">
+            <div nz-col [nzSpan]="12">
+              <nz-card nzTitle="ชื่อคุณสมบัติหลัก">
+                <input nz-input type="text" placeholder="size,color" [(ngModel)]="mainProp">
+                <!-- <input nz-input type="text" [formControl]="propMain" pInputtext
+                                  placeholder="size,color"> -->
+              </nz-card>
+              <br>
+            </div>
+            <div nz-col [nzSpan]="12">
+              <nz-card nzTitle="ค่าของคุณสมบัติ">
+                <div nz-row [nzGutter]="12">
+                  <div nz-col [nzSpan]="16">
+                    <input nz-input type="text" [(ngModel)]="mainValue" pInputtext placeholder="enter option value">
+                  </div>
+                  <div nz-col [nzSpan]="8">
+                    <button nz-button nzType="default" (click)="onUpdateMain()">OK</button>
+                  </div>
+                </div>
+              </nz-card>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div nz-row [nzGutter]="12">
+            <div nz-col [nzSpan]="12">
+              <nz-card nzTitle="ชื่อคุณสมบัติรอง">
+                <input nz-input type="text" placeholder="size,color" [(ngModel)]="subProp">
+                <!-- <input nz-input type="text" [formControl]="propMain" pInputtext
+                                  placeholder="size,color"> -->
+              </nz-card>
+              <br>
+            </div>
+            <div nz-col [nzSpan]="12">
+              <nz-card nzTitle="ค่าของคุณสมบัติ">
+                <div nz-row [nzGutter]="12">
+                  <div nz-col [nzSpan]="16">
+                    <input nz-input type="text" [(ngModel)]="subValue" pInputtext placeholder="enter option value">
+                  </div>
+                  <div nz-col [nzSpan]="8">
+                    <button nz-button nzType="default" (click)="onUpdateSub()">OK</button>
+                  </div>
+                </div>
+              </nz-card>
+            </div>
+          </div>
+        </div>
+        <!-- <div style="position: fixed;bottom: 7rem;right: 1.9rem;">
+                  <button nz-button nzType="default" (click)="onSubmit()">บันทึก</button>
+              </div> -->
+      </div>
+      <div style="position: fixed;bottom: 4rem;right: 3rem;">
+        <button nz-button nzType="default" (click)="onSubmit()" (click)="selectedOption='template2'"
+          [ngClass]="{'active': selectedOption === 'template1'}">บันทึก</button>
+      </div>
+      <div style="position: fixed;bottom: 4rem;right: 8.5rem;">
+        <button nz-button nzType="default" (click)="selectedOption=['ngSwitchDefault']"
+          [ngClass]="{'active': selectedOption === 'template1'}">กลับ</button>
+      </div>
+    </div>
+  </ng-container>
+
+
+
+  <ng-container *ngSwitchCase="'template2'">
+    <div nz-row class="container">
+      <div nz-col nzSpan="24" class="container">
+        <nz-table #table [nzData]="products" [nzShowPagination]="false">
+          <thead>
+            <tr>
+              <th>ชื่อสินค้า</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let group of propGroups">
+              <td>
+                <b>{{group.title_lang1}} </b><br>
+                {{group.sku}}
+              </td>
+              <td>
+                {{group.propValueMain}}-{{group.propValueSub}}
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </nz-table>
+        <div>
+          <br>
+          <nz-pagination [nzPageIndex]="pageIndex" [nzTotal]="total" [nzPageSize]="pageSize"
+            (nzPageIndexChange)="productPages()" (nzPageIndexChange)="onPageIndexChange($event)"
+            (nzPageSizeChange)="onPageSizeChange($event)">
+          </nz-pagination>
+        </div>
+        <div style="position: fixed;bottom: 4rem;right: 3rem;">
+          <button nz-button nzType="default" (click)="selectedOption=['ngSwitchDefault']"
+            [ngClass]="{'active': selectedOption === 'template2'}">หน้าแรก</button>
+        </div>
+        <div style="position: fixed;bottom: 4rem;right: 8.5rem;">
+          <button nz-button nzType="default" (click)="selectedOption=['template1']"
+            [ngClass]="{'active': selectedOption === 'template2'}">กลับ</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
+
+
+
+<!--<div style="background: #f7f7f7;padding:30px;text-align: center;">
+   <h2>เพิ่มคุณสมบัติสินค้า</h2>
+  <div nz-row [nzGutter]="12">
+      <div nz-col [nzSpan]="12">
+          <nz-card>
+              <p>WHITE</p>
+              <p><b>ใช้งาน 1 คุณสมบัติ</b></p>
+              <p>ต้องการเพิ่ม 1 คุณสมบัติ</p>
+              <button nz-button nzType="default" nzSize="small">ใช้งาน 1 คุณสมบัติ</button>
+          </nz-card>
+      </div>
+      <div nz-col [nzSpan]="12">
+          <nz-card>
+              <p>WHITE-XL</p>
+              <p><b>ใช้งาน 2 คุณสมบัติ</b></p>
+              <p>ต้องการเพิ่ม 2 คุณสมบัติ</p>
+              <button nz-button nzType="default" nzSize="small">ใช้งาน 2 คุณสมบัติ</button>
+          </nz-card>
+      </div>
+  </div>
+</div> -->
+
+
+
+<!-- <ng-container *ngIf="selectedTemplate === 'template1'">
+  <h1>Template 1</h1>
+</ng-container> -->
+
+
+
+
+<!-- <button (click)="selectedTemplate='template1'">Template 1</button>
+<button (click)="selectedTemplate='template2'">Template 2</button>
+<button (click)="selectedTemplate='template3'">Template 3</button>
+
+<ng-container *ngIf="selectedTemplate === 'template1'">
+  <h1>Template 1</h1>
+</ng-container>
+<ng-container *ngIf="selectedTemplate === 'template2'">
+  <h1>Template 2</h1>
+</ng-container>
+<ng-container *ngIf="selectedTemplate === 'template3'">
+  <h1>Template 3</h1>
+</ng-container> -->
+
+
+<!-- <div [ngSwitch]="templateType">
+  <ng-template [ngSwitchCase]="'template1'">
+      <h1>Hi</h1>
+      <button (click)="templateType='template2'">Template 2</button>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'template2'">
+      <h1>Template 2</h1>
+      <button (click)="templateType='template3'">Template 2</button>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'template3'">
+      <h1>Template 3</h1>
+  </ng-template>
+</div> -->
+
+
+<!-- <select [(ngModel)]="selectedOption">
+  <option value="template1">Template 1</option>
+  <option value="template2">Template 2</option>
+  <option value="template3">Template 3</option>
+</select>
+
+<div [ngSwitch]="selectedOption">
+  <ng-container *ngSwitchCase="'template1'">
+      <h1>Template 1</h1>
+  </ng-container>
+  <ng-container *ngSwitchCase="'template2'">
+      <h1>Template 2</h1>
+  </ng-container>
+  <ng-container *ngSwitchCase="'template3'">
+      <h1>Template 3</h1>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+      <h1>No template selected</h1>
+  </ng-container>
+</div> -->
+
+
+<!-- <button (click)="selectedOption='template1'" [ngClass]="{'active': selectedOption === 'template1'}">Template 1</button>
+<button (click)="selectedOption='template2'" [ngClass]="{'active': selectedOption === 'template2'}">Template 2</button>
+<button (click)="selectedOption='template3'" [ngClass]="{'active': selectedOption === 'template3'}">Template 3</button>
+
+<div [ngSwitch]="selectedOption">
+  <ng-container *ngSwitchDefault>
+      <h1>No template selected</h1>
+  </ng-container>
+  <ng-container *ngSwitchCase="'template1'">
+      <h1>Template 1</h1>
+  </ng-container>
+  <ng-container *ngSwitchCase="'template2'">
+      <h1>Template 2</h1>
+  </ng-container>
+  <ng-container *ngSwitchCase="'template3'">
+      <h1>Template 3</h1>
+  </ng-container>
+</div> -->

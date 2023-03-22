@@ -1,0 +1,141 @@
+:host {
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.cs-pointer,
+.cs-pointer .ant-tag {
+  cursor: pointer !important;
+}
+
+.box-wrap-content {
+  font-family: Poppins, Prompt;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+
+// .app-layout {
+//   box-sizing: border-box;
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 0;
+//   background: #f0f2f5;
+// }
+
+// nz-header {
+//   z-index: 99;
+//   display: block;
+// }
+
+
+// .app-layout {
+//   height: 100vh;
+// }
+
+// nz-header {
+//   position: fixed;
+//   width: 100%;
+//   height: 64px;
+//   padding: 0 50px;
+//   line-height: 60px;
+//   z-index: 90;
+// }
+
+// // .menu-sidebar {
+// //   position: relative;
+// //   z-index: 10;
+// //   min-height: 100vh;
+// //   box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+// // }
+
+// .header-trigger {
+//   height: 64px;
+//   padding: 20px 24px;
+//   font-size: 20px;
+//   cursor: pointer;
+//   transition: all .3s, padding 0s;
+// }
+
+// .trigger:hover {
+//   color: #d94444;
+// }
+
+// // .sidebar-logo {
+// //   position: relative;
+// //   height: 64px;
+// //   padding-left: 24px;
+// //   overflow: hidden;
+// //   line-height: 64px;
+// //   transition: all .3s;
+// // }
+
+// .sidebar-logo img {
+//   display: inline-block;
+//   height: 32px;
+//   width: 32px;
+//   vertical-align: middle;
+// }
+
+// .sidebar-logo h1 {
+//   display: inline-block;
+//   margin: 0 0 0 20px;
+//   color: #fff;
+//   font-weight: 600;
+//   font-size: 14px;
+//   font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+//   vertical-align: middle;
+// }
+
+
+
+// .app-header {
+//   position: relative;
+//   right: -41px;
+//   height: 64px;
+//   padding: 0px;
+//   background: #fff;
+//   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+// }
+
+// .nz-content {
+//   margin: 24px;
+// }
+
+// .inner-content {
+//   background: #fff;
+//   height: 100%;
+// }
+
+// .header-logo {
+//   max-width: 240px;
+//   background: #1a1a1a;
+// }
+
+// .text-center {
+//   text-align: center;
+// }
+
+// .ant-layout,
+// .ant-layout * {
+//   box-sizing: border-box;
+// }
+
+// .header-bar {
+//   background-color: #fff
+// }
+
+
+// #bodyContentBox {
+//   height: 100%;
+//   overflow-y: scroll;
+//   background-color: #eff1f7;
+// }

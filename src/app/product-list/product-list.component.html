@@ -1,0 +1,476 @@
+<div class="box-wrap-content">
+    <div class="box-content">
+
+        <!-- หน้าที่แรก product list -->
+        <nz-tabset>
+
+
+            <nz-tab nzTitle="Products">
+                <!-- box product -->
+                <div class="row mx-0 mb-2 justify-content-between ng-star-inserted">
+                    <div class="col">
+                        <p class="row2box1">Product</p>
+                    </div>
+
+
+                    <div class="col">
+                        <button class="row2box2 textrowbox2"> Export All</button>
+                    </div>
+
+                    <div class="col">
+                        <button class="row2box3 rounded-2" nz-button nz-dropdown [nzDropdownMenu]="menu2">
+                            <p class="textinselect1">พิมพ์
+                                <svg viewBox="64 64 896 896" fill="currentColor" width="1em" height="1em"
+                                    data-icon="down" aria-hidden="true">
+                                    <path
+                                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+                                    </path>
+                                </svg>
+                            </p>
+                        </button>
+                        <nz-dropdown-menu #menu2="nzDropdownMenu">
+                            <ul class="rounded-2" nz-menu>
+                                <li class="textinselect1 px-3 rounded-2" nz-menu-item>คิวอาร์โค้ดขนาด 66*28 mm.</li>
+                                <li class="textinselect1 px-3 rounded-2" nz-menu-item>บาร์โค้ดขนาด 66*28 mm.</li>
+                            </ul>
+                        </nz-dropdown-menu>
+                    </div>
+
+                    <div class="col">
+
+                        <button class="row2box4 rounded-2" nz-button nz-dropdown [nzDropdownMenu]="menu3">
+                            <p class="textinselect1">จัดการหลายรายการ
+                                <svg viewBox="64 64 896 896" fill="currentColor" width="1em" height="1em"
+                                    data-icon="down" aria-hidden="true">
+                                    <path
+                                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+                                    </path>
+                                </svg>
+                            </p>
+                        </button>
+                        <nz-dropdown-menu #menu3="nzDropdownMenu">
+                            <ul class="rounded-2" nz-menu>
+                                <li class="textinselect1 px-3 rounded-2" nz-menu-item>จัดการหลายรายการ</li>
+                                <li class="textinselect1 px-3 rounded-2" nz-menu-item>จัดการด้วย Excel</li>
+                            </ul>
+                        </nz-dropdown-menu>
+                    </div>
+
+
+                    <div class="col ">
+                        <button class="row2box5 rounded-2" nz-button nz-dropdown nztype="default"
+                            [nzDropdownMenu]="menu4">
+                            <p class="textinselect1">เพิ่มคุณสมบัติสินค้า
+                                <!-- ปุ่ม dropdown -->
+                                <svg viewBox="64 64 896 896" fill="currentColor" width="1em" height="1em"
+                                    data-icon="down" aria-hidden="true">
+                                    <path
+                                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+                                    </path>
+                                </svg>
+                            </p>
+                        </button>
+                        <!-- ปุ่ม select -->
+                        <nz-dropdown-menu #menu4="nzDropdownMenu"
+                            [ngClass]="{'active': selectedOption === 'template1'}">
+                            <ul nz-menu class="rounded-2">
+                                <li class="textinselect1 px-3 rounded-2" nz-menu-item
+                                    (click)="selectedOption=['template1']" (click)="openPopup()" > เพิ่มคุณสมบัติสินค้า</li>
+
+                                <li class="textinselect1 px-3 rounded-2" nz-menu-item (click)="openComponent()">
+                                    อัพเดตคุณสมบัติสินค้า </li>
+                            </ul>
+                        </nz-dropdown-menu>
+                    </div>
+
+
+                    <div class="col"><button type="button"
+                            class="btn btn-danger textaddproduct row2box6">เพิ่มสินค้า</button></div>
+
+                </div>
+
+
+                <!-- ค้นหา -->
+                <div class="box3">
+                    <table>
+                        <tr>
+                            <th>
+                                <p class="rowbox1">ค้นหาจากภาษา</p>
+                            </th>
+                            <th>
+                                <button class="rowbox2 textsearchbox rounded-1" nz-button nz-dropdown
+                                    [nzDropdownMenu]="rowbox2">
+                                    <p class="textinselect1">TH
+                                        <svg viewBox="64 64 896 896" fill="currentColor" width="1em" height="1em"
+                                            data-icon="down" aria-hidden="true">
+                                            <path
+                                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+                                            </path>
+                                        </svg>
+                                    </p>
+                                </button>
+                                <nz-dropdown-menu #rowbox2="nzDropdownMenu">
+                                    <ul class="rounded-1" nz-menu>
+                                        <li class="textsearchbox px-3 rounded-1" nz-menu-item>TH</li>
+                                        <li class="textsearchbox px-3 rounded-1" nz-menu-item>EN</li>
+                                    </ul>
+                                </nz-dropdown-menu>
+                            </th>
+
+                            <th>
+                                <button class="rowbox3 textsearchbox rounded-1" nz-button nz-dropdown
+                                    [nzDropdownMenu]="rowbox3">
+                                    <p class="textinselect1">ทุกสถานะ
+                                        <svg viewBox="64 64 896 896" fill="currentColor" width="1em" height="1em"
+                                            data-icon="down" aria-hidden="true">
+                                            <path
+                                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+                                            </path>
+                                        </svg>
+                                    </p>
+                                </button>
+                                <nz-dropdown-menu #rowbox3="nzDropdownMenu">
+                                    <ul class="rounded-1" nz-menu>
+                                        <li class="textsearchbox px-3 rounded-1" nz-menu-item>ทุกสถานะ</li>
+                                        <li class="textsearchbox px-3 rounded-1" nz-menu-item>ใช้งาน</li>
+                                        <li class="textsearchbox px-3 rounded-1" nz-menu-item>ไม่ใช้งาน</li>
+                                    </ul>
+                                </nz-dropdown-menu>
+                            </th>
+                            <th>
+                                <div>
+                                    <input class="rowbox6 textsearchbox rounded-1 " nz-input
+                                        placeholder="ค้นหาชื่อสินค้า , SKU" nzSize="default" />
+                                </div>
+                            </th>
+                            <th>
+                                <button class="rowbox5 textsearchbox rounded-1" nz-button nz-dropdown
+                                    [nzDropdownMenu]="rowbox5">
+                                    <p class="textinselect1">หมวดหมู่สินค้า
+                                        <svg viewBox="64 64 896 896" fill="currentColor" width="1em" height="1em"
+                                            data-icon="down" aria-hidden="true">
+                                            <path
+                                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+                                            </path>
+                                        </svg>
+                                    </p>
+                                </button>
+                                <nz-dropdown-menu #rowbox5="nzDropdownMenu">
+                                    <ul class="rounded-1" nz-menu>
+                                        <li class="textsearchbox px-3 rounded-1" nz-menu-item>เสื้อ</li>
+                                        <li class="textsearchbox px-3 rounded-1" nz-menu-item>กางเกง</li>
+                                    </ul>
+                                </nz-dropdown-menu>
+                            </th>
+                            <th>
+                                <div>
+                                    <input class="rowbox6 textsearchbox rounded-1 " nz-input
+                                        placeholder="ค้นหากลุ่มสินค้า" nzSize="default" />
+                                </div>
+                            </th>
+                            <th>
+                                <div class="rowbox7">
+                                    <input class="form-check-input" type="checkbox" id="check1" name="option1"
+                                        value="something" checked>
+                                </div>
+                            </th>
+                            <th>
+                                <p class="rowbox8 textsearchbox">แสดงเฉพาะสินค้าหมด</p>
+                            </th>
+                            <th>
+                                <div class="rowbox9"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                    </svg>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="rowbox10"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                        <path
+                                            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                    </svg>
+                                </div>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+                <!-- table product -->
+                <!-- listproduct -->
+                <div>
+                    <div>
+                        <nz-table [nzData]="products" [nzShowPagination]="false">
+                            <thead>
+                                <tr>
+                                    <th width="80" class="px-2 py-2 textheadtable"> แนะนำ</th>
+                                    <th width="60" class="px-1 py-2 textheadtable">ชื่อสินค้า</th>
+                                    <th width="280" class="px-6 py-2 textheadtable"></th>
+                                    <th width="100" class="px-6 py-2 textheadtable"></th>
+                                    <th width="90" class="px-6 py-2 textheadtable"> Rate </th>
+                                    <th width="110" class="px-6 py-2 textheadtable"> ประเภท </th>
+                                    <th width="90" class="px-6 py-2 textheadtable"> ราคา(บาท) </th>
+                                    <th width="90" class="px-6 py-2 textheadtable"> กลุ่ม </th>
+                                    <th width="90" class="px-6 py-2 textheadtable"> จำนวน</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr *ngFor="let product of products">
+                                    <td> <label nz-checkbox nzDisabled [ngModel]="false"></label></td>
+                                    <td>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                            fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
+                                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path
+                                                d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z" />
+                                        </svg>
+                                    </td>
+                                    <td>
+                                        <b class="textproduct">{{product.title_lang1}} </b>
+                                        <br>
+                                        <b class="textsku"> {{product.sku}}</b>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+
+                        </nz-table>
+
+                        <!-- แยกหน้า 1/2/3 -->
+                        <div class="paging">
+                            <nz-pagination 
+                                [nzPageIndex]="pageIndex" [nzTotal]="total" [nzPageSize]="pageSize"
+                                (nzPageIndexChange)="productPages()" (nzPageIndexChange)="onPageIndexChange($event)"
+                                (nzPageSizeChange)="onPageSizeChange($event)">
+                            </nz-pagination>
+                        </div>
+                    </div>
+                </div>
+            </nz-tab>
+
+
+            <!-- หน้าสอง Log file import -->
+            <nz-tab  nzTitle="Log file import">Content of Tab Pane 2</nz-tab>
+        </nz-tabset>
+
+
+  <!-- model เลือกใส่คุณสมบัติสินค้า-->
+  <div class="modal boxmodal" [ngStyle]="{'display':displayStyle}">
+    <div>
+        <div>
+            <div class="boxmodal-header">
+                <p class="textmodal-header">เพิ่มคุณสมบัติสินค้า </p>
+            </div>
+
+            <div class="boxmodal-body">
+                <div class="boxbody">
+                    <button class="boxcontentbody1">
+                        <div class="text1property"> WHITE</div>
+                        <div>
+                            <p class="text2property">ใช้งาน 1 คุณสมบัติ</p>
+                            <p class="text3property">ต้องการเพิ่ม 1 คุณสมบัติให้สินค้า</p>
+                        </div>
+                        <div class="text4property">ใช้งาน 1 คุณสมบัติ</div>
+                    </button>
+                    <button class="boxcontentbody2">
+                        <div class="text1property"> WHITE-XL</div>
+                        <div>
+                            <p class="text2property">ใช้งาน 2 คุณสมบัติ</p>
+                            <p class="text3property">ต้องการเพิ่ม 2 คุณสมบัติให้สินค้า</p>
+                        </div>
+                        <div class="text4property">ใช้งาน 2 คุณสมบัติ</div>
+                    </button>
+                </div>
+
+            </div>
+            <div class="boxmodal-footer">
+                <button class="buttonfooter1" (click)="closePopup()">ยกเลิก</button>
+                <button class="buttonfooter2"(click)="openComponent()">ยืนยัน</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ไม่เอา -->
+
+        <!-- <div nz-row>
+        <div nz-col nzSpan="24" class="box-wrap-content">
+            <div class="box-content">
+                <nz-tabset>
+                    <nz-tab nzTitle="Tab 1">
+                        <button class="dropdown-prop" nz-button nz-dropdown [nzDropdownMenu]="menu4">
+                            เพิ่มคุณสมบัติสินค้า
+                            <span nz-icon nzType="down"></span>
+                        </button>
+                        <nz-dropdown-menu #menu4="nzDropdownMenu"
+                            [ngClass]="{'active': selectedOption === 'template1'}">
+                            <ul nz-menu>
+                                <li nz-menu-item (click)="selectedOption=['template1']">เพิ่มคุณสมบัติสินค้า</li>
+                                <li nz-menu-item (click)="openComponent()">
+                                    อัพเดตคุณสมบัติสินค้า
+                                </li>
+                            </ul>
+                        </nz-dropdown-menu>
+                        <nz-table #table [nzData]="products" [nzShowPagination]="false">
+                            <thead>
+                                <tr>
+                                    <th>ชื่อสินค้า</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let product of products">
+                                    <td>
+                                        <b>{{product.title_lang1}} </b><br>
+                                        {{product.sku}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </nz-table>
+                        <div class="paging">
+                            <nz-pagination [nzPageIndex]="pageIndex" [nzTotal]="total" [nzPageSize]="pageSize"
+                                (nzPageIndexChange)="productPages()" (nzPageIndexChange)="onPageIndexChange($event)"
+                                (nzPageSizeChange)="onPageSizeChange($event)">
+                            </nz-pagination>
+                        </div>
+                    </nz-tab>
+                    <nz-tab nzTitle="Tab 2">Content of Tab Pane 2</nz-tab>
+                </nz-tabset>
+            </div>
+        </div>
+    </div> -->
+
+
+        <!-- <div class="footer">
+    <ng-template #drawerFooter>
+        <nz-pagination [nzPageIndex]="pageIndex" [nzTotal]="total" [nzPageSize]="pageSize"
+            (nzPageIndexChange)="productPages()" (nzPageIndexChange)="onPageIndexChange($event)"
+            (nzPageSizeChange)="onPageSizeChange($event)">
+        </nz-pagination>
+    </ng-template>
+</div> -->
+
+
+
+        <!-- <router-outlet></router-outlet> -->
+
+
+
+        <!--<div style="background: #f7f7f7;padding:30px;text-align: center;">
+     <h2>เพิ่มคุณสมบัติสินค้า</h2>
+    <div nz-row [nzGutter]="12">
+        <div nz-col [nzSpan]="12">
+            <nz-card>
+                <p>WHITE</p>
+                <p><b>ใช้งาน 1 คุณสมบัติ</b></p>
+                <p>ต้องการเพิ่ม 1 คุณสมบัติ</p>
+                <button nz-button nzType="default" nzSize="small">ใช้งาน 1 คุณสมบัติ</button>
+            </nz-card>
+        </div>
+        <div nz-col [nzSpan]="12">
+            <nz-card>
+                <p>WHITE-XL</p>
+                <p><b>ใช้งาน 2 คุณสมบัติ</b></p>
+                <p>ต้องการเพิ่ม 2 คุณสมบัติ</p>
+                <button nz-button nzType="default" nzSize="small">ใช้งาน 2 คุณสมบัติ</button>
+            </nz-card>
+        </div>
+    </div>
+</div> -->
+
+
+
+        <!-- <ng-container *ngIf="selectedTemplate === 'template1'">
+    <h1>Template 1</h1>
+</ng-container> -->
+
+
+
+
+        <!-- <button (click)="selectedTemplate='template1'">Template 1</button>
+<button (click)="selectedTemplate='template2'">Template 2</button>
+<button (click)="selectedTemplate='template3'">Template 3</button>
+
+<ng-container *ngIf="selectedTemplate === 'template1'">
+    <h1>Template 1</h1>
+</ng-container>
+<ng-container *ngIf="selectedTemplate === 'template2'">
+    <h1>Template 2</h1>
+</ng-container>
+<ng-container *ngIf="selectedTemplate === 'template3'">
+    <h1>Template 3</h1>
+</ng-container> -->
+
+
+        <!-- <div [ngSwitch]="templateType">
+    <ng-template [ngSwitchCase]="'template1'">
+        <h1>Hi</h1>
+        <button (click)="templateType='template2'">Template 2</button>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'template2'">
+        <h1>Template 2</h1>
+        <button (click)="templateType='template3'">Template 2</button>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'template3'">
+        <h1>Template 3</h1>
+    </ng-template>
+</div> -->
+
+
+        <!-- <select [(ngModel)]="selectedOption">
+    <option value="template1">Template 1</option>
+    <option value="template2">Template 2</option>
+    <option value="template3">Template 3</option>
+</select>
+
+<div [ngSwitch]="selectedOption">
+    <ng-container *ngSwitchCase="'template1'">
+        <h1>Template 1</h1>
+    </ng-container>
+    <ng-container *ngSwitchCase="'template2'">
+        <h1>Template 2</h1>
+    </ng-container>
+    <ng-container *ngSwitchCase="'template3'">
+        <h1>Template 3</h1>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+        <h1>No template selected</h1>
+    </ng-container>
+</div> -->
+
+
+        <!-- <button (click)="selectedOption='template1'" [ngClass]="{'active': selectedOption === 'template1'}">Template 1</button>
+<button (click)="selectedOption='template2'" [ngClass]="{'active': selectedOption === 'template2'}">Template 2</button>
+<button (click)="selectedOption='template3'" [ngClass]="{'active': selectedOption === 'template3'}">Template 3</button>
+
+<div [ngSwitch]="selectedOption">
+    <ng-container *ngSwitchDefault>
+        <h1>No template selected</h1>
+    </ng-container>
+    <ng-container *ngSwitchCase="'template1'">
+        <h1>Template 1</h1>
+    </ng-container>
+    <ng-container *ngSwitchCase="'template2'">
+        <h1>Template 2</h1>
+    </ng-container>
+    <ng-container *ngSwitchCase="'template3'">
+        <h1>Template 3</h1>
+    </ng-container>
+</div> -->
